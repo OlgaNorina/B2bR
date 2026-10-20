@@ -5,7 +5,6 @@
 This project focuses on setting up the first server as part of the School 42 curriculum.
 
 ### Defense Terminology & Comparisons
-<details>
 
 #### 🖥️ Virtualization & Operating Systems (Виртуализация и ОС)
 <details>
@@ -68,7 +67,6 @@ This project focuses on setting up the first server as part of the School 42 cur
 
 </details>
 
-</details>
 
 ## Instructions
 
@@ -77,4 +75,44 @@ This project focuses on setting up the first server as part of the School 42 cur
 1. 🌀 **Debian Installation** - Complete OS installation with proper partitioning
 1. ⚙️ **System Configuration** - SSH, firewall, users, and security policies
 1. 🧾 **Monitoring** - Creating and scheduling monitoring scripts
-1. ✅ Evaluation Preparation - Commands and answers for peer evaluation
+1. ✅ **Evaluation Preparation** - Commands and answers for peer evaluation
+
+### Step 1 📥 Prerequisites
+
+The following software was pre-installed and configured on the host machine to develop this project:
+
+* **Virtualization Software (Choose one based on your OS):**
+  * [Download VirtualBox](https://virtualbox.org) — Recommended for Windows, Linux, and Intel-based Macs.
+* **Operating System Image:**
+  * [Download Debian 12.5.0 Netinst ISO (amd64)](https://debian.org) — The lightweight, official installer used to set up the server from scratch.
+
+ ### Step 2
+
+ ### 💻 Recommended VM Hardware Allocation
+
+When creating the Virtual Machine in VirtualBox / UTM, use the following resource allocation:
+
+* **RAM (ОЗУ):** **1024 MB (1 GB)** — Plenty for a headless Linux server running background scripts. (Do not allocate more than 2048 MB unless doing heavy tasks).
+* **CPU (Процессор):** **1 vCPU** — A single virtual core is more than enough for system administration tasks and light services.
+* **Storage (Диск):** **8.5 GB** (VDI / Dynamic Allocation) — Plenty of space to easily fit the required encrypted LVM partition scheme for the mandatory part without wasting host storage.
+  * 💾 **Mandatory LVM Partition Scheme (8.5 GB Disk)**
+    <details>
+    The drive is partitioned strictly according to the mandatory requirements using Encrypted LVM:
+    
+    * **/boot** — **≈500 MB** *(Standard Partition / Non-Encrypted)*
+      * Stores the Linux kernel and bootloader files. It must remain unencrypted so the system can boot and ask for the decryption password.
+      * *Хранит ядро Linux и файлы загрузчика. Остается незашифрованным, чтобы система могла запуститься и запросить пароль.*
+    * **/root** — **≈3 GB** *(Logical Volume / Encrypted)*
+      * The main system partition. It automatically includes directories like `/var` (and `/var/log/sudo/`), `/tmp`, sharing this volume's total capacity.
+      * *Главный системный раздел. Автоматически включает в себя папки `/var` (включая логи sudo), `/tmp`, которые делят между собой это пространство.*
+    * **/home** — **≈4 GB** *(Logical Volume / Encrypted)*
+      * Secure isolated space for personal user data and configurations.
+      * *Изолированное безопасное пространство для личных данных пользователей.*
+    * **swap** — **≈1 GB** *(Logical Volume / Encrypted)*
+      * Virtual memory partition used as an extension when physical RAM is fully utilized.
+      * *Раздел виртуальной памяти, используемый при нехватке физической ОЗУ.*
+    </details>
+
+* **Network (Сеть):** **NAT with Port Forwarding** — Essential for connecting from your host terminal to the guest VM via SSH (`Host Port: 4242` -> `Guest Port: 4242`).
+
+
