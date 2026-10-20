@@ -2,12 +2,14 @@
 # Born2beRoot
 
 ## Description
-This project focuses on setting up your first server as part of the School 42 curriculum.
+This project focuses on setting up the first server as part of the School 42 curriculum.
 
-## Defense Terminology & Comparisons
+### Defense Terminology & Comparisons
+<details>
 
-### 🖥️ Virtualization & Operating Systems (Виртуализация и ОС)
-
+#### 🖥️ Virtualization & Operating Systems (Виртуализация и ОС)
+<details>
+  
 | Term / Comparison | Simple English Definition | Описание на русском |
 | :--- | :--- | :--- |
 | **VirtualBox** | A free tool (hypervisor) that lets you run another operating system (like Linux) inside your current computer. | Бесплатная программа (гипервизор), которая позволяет запускать одну ОС (например, Linux) внутри вашей текущей системы. |
@@ -17,8 +19,11 @@ This project focuses on setting up your first server as part of the School 42 cu
 | **Debian vs Rocky Linux** | **Debian** is community-driven, uses `apt`, and values stability. **Rocky Linux** is enterprise-focused, uses `dnf`/`rpm`, and mimics commercial Red Hat systems. | **Debian** создается сообществом, использует `apt` и ценит стабильность. **Rocky Linux** ориентирован на бизнес, использует `dnf`/`rpm` и копирует коммерческую систему Red Hat. |
 | **Red Hat (RHEL)** | Red Hat Enterprise Linux. A commercial, highly secure, and stable Linux operating system built for big businesses and servers. | Коммерческая, высокобезопасная и стабильная ОС Linux, созданная для крупного бизнеса и серверов. |
 | **CentOS** | A free, community-supported Linux version that was identical to Red Hat. It was discontinued and replaced by newer systems like Rocky Linux. | Бесплатная версия Linux, которая была полной копией Red Hat. Проект закрыли, и его заменили новые системы, такие как Rocky Linux. |
+  
+</details>
 
-### 🛡️ Security & Access Control (Безопасность и контроль доступа)
+#### 🛡️ Security & Access Control (Безопасность и контроль доступа)
+<details>
 
 | Term / Comparison | Simple English Definition | Описание на русском |
 | :--- | :--- | :--- |
@@ -27,7 +32,10 @@ This project focuses on setting up your first server as part of the School 42 cu
 | **AppArmor vs SELinux** | **AppArmor** is easier to use and relies on path names to block programs. **SELinux** is much more secure but complex, using special security tags (labels) attached to files. | **AppArmor** проще и блокирует программы на основе путей к файлам. **SELinux** намного безопаснее, но сложнее, так как использует специальные метки безопасности для каждого файла. |
 | **sudo** | "Superuser Do". A command that gives a regular user temporary administrator rights (root privileges) to run critical commands. | "Superuser Do" (выполнить суперпользователем). Команда, дающая обычному пользователю права администратора (root) для выполнения важных настроек. |
 
-### 🔌 Network & Firewalls (Сеть и фаерволы)
+</details>
+
+#### 🔌 Network & Firewalls (Сеть и фаерволы)
+<details>
 
 | Term / Comparison | Simple English Definition | Описание на русском |
 | :--- | :--- | :--- |
@@ -39,17 +47,34 @@ This project focuses on setting up your first server as part of the School 42 cu
 | **firewalld** | A dynamic firewall tool used by default in Rocky/RHEL systems. It manages network traffic using "zones". | Динамический фаервол, используемый по умолчанию в системах Rocky/RHEL. Управляет трафиком с помощью разделения на "зоны". |
 | **UFW vs firewalld** | **UFW** is simple, static, and perfect for basic setups. **firewalld** is more advanced, supports dynamic updates without restarting, and uses "zones". | **UFW** — простой, статический, идеален для базы. **firewalld** — продвинутый, поддерживает обновление правил без перезапуска и делит сеть на зоны. |
 
-### 📦 Package Management (Управление пакетами)
+</details>
+
+#### 📦 Package Management (Управление пакетами)
+<details>
 
 | Term | Simple English Definition | Описание на русском |
 | :--- | :--- | :--- |
 | **apt** | The standard command-line tool in Debian to install, update, and remove software packages. | Стандартная консольная утилита в Debian для установки, обновления и удаления программ (пакетов). |
 | **aptitude** | An advanced version of `apt` that includes a visual text interface and is much better at solving software conflicts. | Продвинутая версия `apt`, которая имеет псевдографический интерфейс и гораздо лучше решает конфликты зависимостей программ. |
 
-### 💾 Storage Management (Управление дисками)
+</details>
+
+#### 💾 Storage Management (Управление дисками)
+<details>
 
 | Term | Simple English Definition | Описание на русском |
 | :--- | :--- | :--- |
 | **LVM** | Logical Volume Management. A tool that lets you group physical hard drives into flexible "virtual" partitions that can be easily resized. | Технология управления дисками. Позволяет объединять физические накопители в гибкие "виртуальные" разделы, размер которых можно легко менять на лету. |
 
+</details>
 
+</details>
+
+## Instructions
+
+### 📚 Structure
+1. 🛠️ **Virtual Machine Setup** - Installing VirtualBox and setting up your VM
+1. 🌀 **Debian Installation** - Complete OS installation with proper partitioning
+1. ⚙️ **System Configuration** - SSH, firewall, users, and security policies
+1. 🧾 **Monitoring** - Creating and scheduling monitoring scripts
+1. ✅ Evaluation Preparation - Commands and answers for peer evaluation
