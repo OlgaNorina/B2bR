@@ -121,5 +121,6 @@ The most important part:
 * **Username**: A new user that isn't the root user, and the name for that user must be the student login (*onorina*).
 * **Partitioning method**: Guided - use entire disk and set up encrypted LVM (*To fulfill the subject requirement "You must encrypt at least two partitions using LVM"*)
 * **Choose software to install**: Nothing
+* **GRUB Bootloader:** Installed directly to the primary drive (`/dev/sda`). *Required to allow the system to boot standalone and trigger the LUKS decryption screen.*
 
 
