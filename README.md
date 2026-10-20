@@ -86,9 +86,7 @@ The following software was pre-installed and configured on the host machine to d
 * **Operating System Image:**
   * [Download Debian 12.5.0 Netinst ISO (amd64)](https://debian.org) — The lightweight, official installer used to set up the server from scratch.
 
- ### Step 2
-
- ### 💻 Recommended VM Hardware Allocation
+ ### Step 2 💻 Recommended VM Hardware Allocation
 
 When creating the Virtual Machine in VirtualBox / UTM, use the following resource allocation:
 
@@ -114,5 +112,14 @@ When creating the Virtual Machine in VirtualBox / UTM, use the following resourc
     </details>
 
 * **Network (Сеть):** **NAT with Port Forwarding** — Essential for connecting from your host terminal to the guest VM via SSH (`Host Port: 4242` -> `Guest Port: 4242`).
+
+### Step 3 🛠️ Instalation
+The most important part:
+* **Set the hostname**, which must be the login followed by 42 (*onorina42*).
+* **Domain name**: This section should be left blank since the subject doesn't require it.
+* **Full name for the new user**: A new user that isn't the root user (*Olga Norina*).
+* **Username**: A new user that isn't the root user, and the name for that user must be the student login (*onorina*).
+* **Partitioning method**: Guided - use entire disk and set up encrypted LVM (*To fulfill the subject requirement "You must encrypt at least two partitions using LVM"*)
+* **Choose software to install**: Nothing
 
 
